@@ -19,8 +19,8 @@ export default function Dropdowns() {
         Desired Experience Level
       </label>
       <select id="exp" name="exp" className="mg-b-40">
-        <option value="entry">Entry Level</option>
-        <option value="mid">Mid Level</option>
+        <option value="entry-level">Entry Level</option>
+        <option value="mid-level">Mid Level</option>
         <option value="senior">Senior Level</option>
       </select>
 
