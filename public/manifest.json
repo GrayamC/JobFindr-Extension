@@ -1,0 +1,28 @@
+{
+  "name": "JobFindr - The modern solution to the job hunt!",
+  "description": "Do you hate job boards? We do too! JobFindr is clever tool that leverages the power of keywords to scour dozens of job boards to find your dream job.",
+  "homepage_url": "https://github.com/llagerlof/fresh-chrome-extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "JobFindr",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "js": ["before.js"],
+      "matches": ["https://*/*", "http://*/*"]
+    },
+    {
+      "run_at": "document_idle",
+      "js": ["after.js"],
+      "matches": ["https://*/*", "http://*/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": ["https://*/*", "http://*/*"]
+}
