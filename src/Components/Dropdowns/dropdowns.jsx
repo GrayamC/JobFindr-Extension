@@ -2,7 +2,7 @@ import "./dropdowns.css";
 import { useState } from "react";
 
 export default function Dropdowns() {
-  const [expValue, setExpValue] = useState(true);
+  const [expValue, setExpValue] = useState("");
 
   function updateExp(event) {
     setExpValue(event.target.value);
