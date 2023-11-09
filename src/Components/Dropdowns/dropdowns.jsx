@@ -1,11 +1,14 @@
 import "./dropdowns.css";
-import { useState } from "react";
 
-export default function Dropdowns() {
-  const [expValue, setExpValue] = useState("");
-
+export default function Dropdowns(props) {
+  function updateTitle(event) {
+    props.titleValue.set(event.target.value);
+  }
   function updateExp(event) {
-    setExpValue(event.target.value);
+    props.expValue.set(event.target.value);
+  }
+  function updateCommute(event) {
+    props.commuteValue.set(event.target.value);
   }
 
   return (
@@ -20,14 +23,20 @@ export default function Dropdowns() {
         name="title"
         placeholder="Product Designer, Engineer, etc."
         className="mg-b-40"
-        onChange={updateExp}
-        value={expValue}
+        onChange={updateTitle}
+        value={props.titleValue.value}
       />
 
       <label htmlFor="exp" className="mg-b-8">
         Desired Experience Level
       </label>
-      <select id="exp" name="exp" className="mg-b-40">
+      <select
+        id="exp"
+        name="exp"
+        className="mg-b-40"
+        onChange={updateExp}
+        value={props.expValue.value}
+      >
         <option value="junior">Entry Level</option>
         <option value="mid-level">Mid Level</option>
         <option value="senior">Senior Level</option>
@@ -36,7 +45,13 @@ export default function Dropdowns() {
       <label htmlFor="commute" className="mg-b-8">
         Desired Commute Type
       </label>
-      <select id="commute" name="commute" className="mg-b-40">
+      <select
+        id="commute"
+        name="commute"
+        className="mg-b-40"
+        onChange={updateCommute}
+        value={props.commuteValue.value}
+      >
         <option value="remote">Remote</option>
         <option value="hybrid">Hybrid</option>
         <option value="onsite">On site</option>
