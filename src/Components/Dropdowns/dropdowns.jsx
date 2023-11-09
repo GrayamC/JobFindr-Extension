@@ -1,6 +1,13 @@
 import "./dropdowns.css";
+import { useState } from "react";
 
 export default function Dropdowns() {
+  const [expValue, setExpValue] = useState(true);
+
+  function updateExp(event) {
+    setExpValue(event.target.value);
+  }
+
   return (
     //Input Holder
     <div className="dropdown-area">
@@ -13,13 +20,15 @@ export default function Dropdowns() {
         name="title"
         placeholder="Product Designer, Engineer, etc."
         className="mg-b-40"
+        onChange={updateExp}
+        value={expValue}
       />
 
       <label htmlFor="exp" className="mg-b-8">
         Desired Experience Level
       </label>
       <select id="exp" name="exp" className="mg-b-40">
-        <option value="entry-level">Entry Level</option>
+        <option value="junior">Entry Level</option>
         <option value="mid-level">Mid Level</option>
         <option value="senior">Senior Level</option>
       </select>
