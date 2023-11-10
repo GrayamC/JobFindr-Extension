@@ -3,7 +3,7 @@ import MainButton from "./Components/MainButton/MainButton";
 import Dropdowns from "./Components/Dropdowns/dropdowns";
 import Logo from "./assets/JobFindrLogo.png";
 import { useState } from "react";
-import { getJobs } from "./Components/Jobs/fetchjobs.js";
+import { getJobs } from "./Components/Jobs/fetchjobs";
 
 function App() {
   const [titleValue, setTitleValue] = useState("");
@@ -35,10 +35,7 @@ function App() {
         expValue={expObject}
         commuteValue={commuteObject}
       />
-      <MainButton
-        clickEvent={() => getJobs(expValue, commuteValue, titleValue)}
-        text="Search Jobs"
-      />
+      <MainButton clickEvent={() => getJobs()} text="Search Jobs" />
     </>
   );
 }
