@@ -1,4 +1,4 @@
-export function getJobs(expDropdown, commuteDropdown, jobTitle) {
+export function getJobs(commuteDropdown, expDropdown, jobTitle) {
   const apiKey = "AIzaSyCQs786_-uUN3DtptceBa9dn0mnXeGOoL4";
   const searchEngineId = "633e90580c48f46ff";
   const searchTerm = `site:lever.co OR site:greenhouse.io 
@@ -20,4 +20,8 @@ ${jobTitle}`;
       // Handle any errors that occur during the API request
       console.error("Error:", error);
     });
+  function setSearched() {
+    searched == true;
+  }
+  setSearched();
 }

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { getJobs } from "./Components/Jobs/fetchjobs";
 
 function App() {
+  //Compartmentalize state for all 3 values
   const [titleValue, setTitleValue] = useState("");
 
   const titleObject = {
@@ -27,6 +28,7 @@ function App() {
     set: setCommuteValue,
   };
 
+  //Conditionally render search vs. results
   return (
     <>
       <img className="logo mg-b-64" src={Logo}></img>
@@ -35,7 +37,12 @@ function App() {
         expValue={expObject}
         commuteValue={commuteObject}
       />
-      <MainButton clickEvent={() => getJobs()} text="Search Jobs" />
+      <MainButton
+        clickEvent={() =>
+          getJobs(commuteObject.value, expObject.value, titleObject.value)
+        }
+        text="Search Jobs"
+      />
     </>
   );
 }

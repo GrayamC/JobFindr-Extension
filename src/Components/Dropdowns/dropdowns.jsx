@@ -28,15 +28,10 @@ export default function Dropdowns(props) {
       />
 
       <label htmlFor="exp" className="mg-b-8">
-        Desired Experience Level
+        Current Experience Level
       </label>
-      <select
-        id="exp"
-        name="exp"
-        className="mg-b-40"
-        onChange={updateExp}
-        value={props.expValue.value}
-      >
+      <select id="exp" name="exp" className="mg-b-40" onChange={updateExp}>
+        <option value="junior">Select current experience</option>
         <option value="junior">Entry Level</option>
         <option value="mid-level">Mid Level</option>
         <option value="senior">Senior Level</option>
@@ -50,8 +45,8 @@ export default function Dropdowns(props) {
         name="commute"
         className="mg-b-40"
         onChange={updateCommute}
-        value={props.commuteValue.value}
       >
+        <option value="remote">Select desired commute</option>
         <option value="remote">Remote</option>
         <option value="hybrid">Hybrid</option>
         <option value="onsite">On site</option>
