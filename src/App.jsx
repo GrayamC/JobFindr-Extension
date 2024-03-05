@@ -28,7 +28,19 @@ function App() {
     set: setCommuteValue,
   };
 
+  const [searched, setSearched] = useState("");
+
+  function toggleSearch() {
+    setSearched((searched) => !searched);
+  }
   //Conditionally render search vs. results
+  const results = `
+    <>
+     <h1>Hello</h1>
+     <p> hi</p>
+    </>
+  );`;
+
   return (
     <>
       <img className="logo mg-b-64" src={Logo}></img>
@@ -40,7 +52,7 @@ function App() {
       <MainButton
         clickEvent={() =>
           getJobs(commuteObject.value, expObject.value, titleObject.value) &&
-          console.log("hello")
+          toggleSearch()
         }
         text="Search Jobs"
       />
