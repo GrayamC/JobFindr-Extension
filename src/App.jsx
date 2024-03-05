@@ -39,7 +39,8 @@ function App() {
       />
       <MainButton
         clickEvent={() =>
-          getJobs(commuteObject.value, expObject.value, titleObject.value)
+          getJobs(commuteObject.value, expObject.value, titleObject.value) &&
+          console.log("hello")
         }
         text="Search Jobs"
       />
