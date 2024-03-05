@@ -30,16 +30,18 @@ function App() {
 
   const [searched, setSearched] = useState("");
 
-  function toggleSearch() {
-    setSearched((searched) => !searched);
-  }
-  //Conditionally render search vs. results
   const results = `
     <>
      <h1>Hello</h1>
      <p> hi</p>
     </>
   );`;
+
+  function toggleSearch() {
+    setSearched((searched) => !searched);
+    searched ? console.log("hello") : console.log("nello");
+  }
+  //Conditionally render search vs. results
 
   return (
     <>
