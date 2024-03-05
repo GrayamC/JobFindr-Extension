@@ -20,8 +20,4 @@ ${jobTitle}`;
       // Handle any errors that occur during the API request
       console.error("Error:", error);
     });
-  function setSearched() {
-    searched == true;
-  }
-  setSearched();
 }
