@@ -6,11 +6,9 @@ ${commuteDropdown}
 ${expDropdown}
 ${jobTitle}`;
   // Use 1 for the first page, 11 for the second page, and so on.
-
   // Construct the URL for the API request
   const apiUrl = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${searchTerm}&start=1`;
   // Make the API request using fetch
-
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {

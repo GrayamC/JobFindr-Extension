@@ -28,20 +28,30 @@ function App() {
     set: setCommuteValue,
   };
 
-  const [searched, setSearched] = useState("");
+  const [searched, setSearched] = useState(false);
 
-  const results = `
+  /* const results = `
     <>
      <h1>Hello</h1>
      <p> hi</p>
     </>
-  );`;
+  );`;*/
 
-  function toggleSearch() {
-    setSearched((searched) => !searched);
-    searched ? console.log("hello") : console.log("nello");
+  async function getAPIResponse() {
+    function toggleSearch() {
+      console.log("fllipped");
+      setSearched(true);
+    }
+    await toggleSearch();
+    getJobs(commuteObject.value, expObject.value, titleObject.value);
+    console.log(searched);
   }
-  //Conditionally render search vs. results
+  //Check if searched is set to true
+  /*function checkSearched() {
+    if (searched == true) {
+      return <></>;
+    }
+  }*/
 
   return (
     <>
@@ -51,13 +61,7 @@ function App() {
         expValue={expObject}
         commuteValue={commuteObject}
       />
-      <MainButton
-        clickEvent={() =>
-          getJobs(commuteObject.value, expObject.value, titleObject.value) &&
-          toggleSearch()
-        }
-        text="Search Jobs"
-      />
+      <MainButton clickEvent={() => getAPIResponse()} text="Search Jobs" />
     </>
   );
 }
